@@ -1,0 +1,48 @@
+name: Quantum Forge Automation
+description: Advanced GitHub automation system with quantum-inspired workflow orchestration
+default_events:
+  - check_run
+  - check_suite
+  - create
+  - delete
+  - deployment
+  - deployment_status
+  - issues
+  - issue_comment
+  - label
+  - milestone
+  - pull_request
+  - pull_request_review
+  - pull_request_review_comment
+  - push
+  - release
+  - repository
+  - repository_dispatch
+  - status
+  - workflow_dispatch
+  - workflow_run
+
+default_permissions:
+  # Repository contents
+  contents: write
+  # Deployments
+  deployments: write
+  # Issues
+  issues: write
+  # Pull requests
+  pull_requests: write
+  # Security events
+  security_events: write
+  # Workflows
+  workflows: write
+
+# Optional: Configure webhook settings
+webhook:
+  active: true
+  insecure_ssl: '0'
+  content_type: json
+  secret: ${WEBHOOK_SECRET}  # Set this in your environment
+
+# Optional: Configure URL settings
+url: https://api.quantum-forge.io
+contact_email: support@quantum-forge.io
